@@ -179,6 +179,22 @@ body::before{
 .ticker-pill.soon{opacity:0.6}
 .ca-note{font-size:12px;color:var(--muted-2);font-family:'Instrument Serif',serif;font-style:italic;flex-basis:100%;}
 
+/* ===== PAYOUT STRIP ===== */
+.payout-strip{
+  position:relative;z-index:2;
+  background:linear-gradient(180deg,var(--ink),var(--ink-2));
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:clamp(38px,10vw,60px) clamp(20px,6vw,24px);
+  display:flex;flex-direction:column;align-items:center;
+  gap:clamp(14px,4vw,20px);text-align:center;
+}
+.payout-line{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(1.35rem,5.6vw,2.2rem);line-height:1.34;
+  color:var(--cream);max-width:24ch;
+}
+.payout-line em{font-style:italic;color:var(--gold-hi)}
+
 /* ===== NOTHING (struck promises) ===== */
 .nothing{position:relative;z-index:2;padding:clamp(80px,18vw,130px) clamp(20px,6vw,24px);
   background:linear-gradient(180deg,var(--ink),var(--paper) 50%,var(--ink))}
@@ -260,7 +276,7 @@ footer img{width:28px;height:28px;margin:0 auto 8px;opacity:0.85}
 
 <div class="tape">
   <div class="tape-track">
-    <b>Breaking</b><span class="sq">■</span><b>The internet has nothing to say</b><span class="sq">■</span><b>Some news you can't react to</b><span class="sq">■</span><b>$Speechless</b><span class="sq">■</span><b>Speech is silver · silence is gold</b><span class="sq">■</span><b>Breaking</b><span class="sq">■</span><b>The internet has nothing to say</b><span class="sq">■</span><b>Some news you can't react to</b><span class="sq">■</span><b>$Speechless</b><span class="sq">■</span><b>Speech is silver · silence is gold</b><span class="sq">■&nbsp;</span>
+    <b>Breaking</b><span class="sq">■</span><b>The internet has nothing to say</b><span class="sq">■</span><b>Now on Base</b><span class="sq">■</span><b>Some news you can't react to</b><span class="sq">■</span><b>Paid in Bitcoin and gold</b><span class="sq">■</span><b>$Speechless</b><span class="sq">■</span><b>Speech is silver · silence is gold</b><span class="sq">■&nbsp;</span><b>Breaking</b><span class="sq">■</span><b>The internet has nothing to say</b><span class="sq">■</span><b>Now on Base</b><span class="sq">■</span><b>Some news you can't react to</b><span class="sq">■</span><b>Paid in Bitcoin and gold</b><span class="sq">■</span><b>$Speechless</b><span class="sq">■</span><b>Speech is silver · silence is gold</b><span class="sq">■&nbsp;</span>
   </div>
 </div>
 
@@ -300,6 +316,11 @@ footer img{width:28px;height:28px;margin:0 auto 8px;opacity:0.85}
     </p>
   </div>
 </section>
+
+<div class="payout-strip">
+  <span class="ca-label reveal">the one thing that is here</span>
+  <span class="payout-line reveal">Still nothing to say.<br>You just get paid in <em>Bitcoin</em> and <em>gold</em>.</span>
+</div>
 
 <section class="join">
   <h2 class="reveal">Say <span>nothing.</span><br>Hold anyway.</h2>
