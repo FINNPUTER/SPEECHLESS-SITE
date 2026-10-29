@@ -21,8 +21,8 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <style>
-@font-face{font-family:"Syne";font-weight:700;font-style:normal;font-display:swap;src:url(fonts/syne-latin-700-normal.woff2) format("woff2")}
-@font-face{font-family:"Syne";font-weight:800;font-style:normal;font-display:swap;src:url(fonts/syne-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-weight:800;font-style:normal;font-display:swap;src:url(fonts/outfit-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-weight:900;font-style:normal;font-display:swap;src:url(fonts/outfit-latin-900-normal.woff2) format("woff2")}
 @font-face{font-family:"Space Grotesk";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/space-grotesk-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:"Space Grotesk";font-weight:500;font-style:normal;font-display:swap;src:url(fonts/space-grotesk-latin-500-normal.woff2) format("woff2")}
 @font-face{font-family:"Space Grotesk";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/space-grotesk-latin-600-normal.woff2) format("woff2")}
@@ -59,7 +59,7 @@ main,nav,footer{position:relative;z-index:2}
 /* Nav */
 nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;width:min(760px,calc(100% - 32px))}
 .pill{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-.brand{display:flex;align-items:center;gap:10px;font-family:Syne,sans-serif;font-weight:800;letter-spacing:.04em}
+.brand{display:flex;align-items:center;gap:10px;font-family:Outfit,sans-serif;font-weight:800;letter-spacing:.04em}
 .brand img{width:28px;height:28px}
 .links{display:flex;gap:4px}
 .links a{padding:8px 14px;border-radius:999px;font-size:14px;color:var(--muted);transition:.2s}
@@ -83,7 +83,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;width
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--glass);font-size:13px;color:var(--muted);margin-bottom:22px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:blink 1.6s infinite}
 @keyframes blink{50%{opacity:.3}}
-h1{font-family:Syne,sans-serif;font-weight:800;font-size:min(8.2vw,128px);white-space:nowrap;line-height:.92;letter-spacing:-.02em}
+h1{font-family:Outfit,sans-serif;font-weight:900;font-size:min(13.5vw,150px);white-space:nowrap;line-height:.92;letter-spacing:-.02em}
 .shiny{background:linear-gradient(110deg,var(--green2) 30%,#eafff1 50%,var(--green2) 70%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
 @keyframes shine{from{background-position:120% 0}to{background-position:-120% 0}}
 .lead{max-width:560px;margin:22px auto 0;font-size:clamp(17px,2.4vw,21px);color:var(--muted)}
@@ -97,13 +97,13 @@ h1{font-family:Syne,sans-serif;font-weight:800;font-size:min(8.2vw,128px);white-
 /* Sections */
 section{padding:110px 16px;max-width:1120px;margin:0 auto}
 .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
-h2{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(30px,6vw,64px);overflow-wrap:break-word;line-height:1;letter-spacing:-.01em;max-width:780px}
+h2{font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(34px,6.4vw,70px);overflow-wrap:break-word;line-height:1;letter-spacing:-.02em;max-width:780px}
 .sub{color:var(--muted);font-size:18px;max-width:600px;margin-top:18px}
 
 /* Stats */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
 .stat{padding:26px 22px;border-radius:22px;background:var(--glass);border:1px solid var(--line)}
-.stat .num{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(38px,5vw,56px);color:var(--green);line-height:1}
+.stat .num{font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(38px,5vw,56px);color:var(--green);line-height:1}
 .stat .lbl{margin-top:10px;color:var(--muted);font-size:15px}
 
 /* Spotlight cards */
@@ -113,7 +113,7 @@ h2{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(30px,6vw,64px);ov
 .spot:hover::before{opacity:1}
 .spot>*{position:relative}
 .spot .ico{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--green-dim);color:var(--green);margin-bottom:20px}
-.spot h3{font-family:Syne,sans-serif;font-size:22px;margin-bottom:10px}
+.spot h3{font-family:Outfit,sans-serif;font-size:22px;margin-bottom:10px}
 .spot p{color:var(--muted)}
 
 /* Burn */
@@ -124,7 +124,7 @@ h2{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(30px,6vw,64px);ov
 .flow h4{font-size:17px;margin-bottom:4px}
 .flow p{color:var(--muted);font-size:15px}
 .tracker{margin-top:28px;padding:24px;border-radius:22px;border:1px dashed rgba(93,245,144,.35);text-align:center}
-.tracker .big{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(26px,5vw,46px);line-height:1.15;color:var(--green)}
+.tracker .big{font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(26px,5vw,46px);line-height:1.15;color:var(--green)}
 .tracker small{color:var(--muted)}
 
 /* Quotes */
@@ -140,12 +140,24 @@ h2{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(30px,6vw,64px);ov
 /* Buy */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
 .steps .spot{padding:26px 22px}
-.steps .num{font-family:Syne,sans-serif;font-size:44px;font-weight:800;color:var(--green);opacity:.9;line-height:1;margin-bottom:14px}
+.steps .num{font-family:Outfit,sans-serif;font-size:44px;font-weight:800;color:var(--green);opacity:.9;line-height:1;margin-bottom:14px}
 
 /* Final */
 .final{text-align:center;padding-bottom:140px}
 .final h2{margin:0 auto}
 .final img{width:150px;margin:0 auto 26px;filter:drop-shadow(0 0 20px rgba(93,245,144,.4))}
+.final img.in{animation:shh 4.5s ease-in-out infinite}
+@keyframes shh{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-10px) rotate(-3deg)}60%{transform:translateY(-4px) rotate(2deg)}}
+.scene{position:relative;display:flex;align-items:flex-end;margin-top:30px;aspect-ratio:1200/821;max-width:520px}
+.scene::after{content:"";position:absolute;left:45%;right:2%;bottom:4%;height:30%;border-radius:50%;background:radial-gradient(ellipse,rgba(93,245,144,.45),transparent 70%);filter:blur(24px);animation:heat 1.6s ease-in-out infinite;z-index:0}
+.scene img{position:relative;z-index:1;height:100%;filter:drop-shadow(0 0 14px rgba(93,245,144,.3))}
+.scene .al{width:33.25%;object-fit:contain;transform-origin:50% 100%;animation:sway 5s ease-in-out infinite}
+.scene .fi{width:66.75%;object-fit:contain;transform-origin:55% 100%;animation:flicker 1.3s ease-in-out infinite}
+@keyframes flicker{0%,100%{transform:scale(1,1) skewX(0);filter:drop-shadow(0 0 14px rgba(93,245,144,.3)) brightness(1)}25%{transform:scale(1.01,1.035) skewX(-.8deg);filter:drop-shadow(0 0 22px rgba(93,245,144,.55)) brightness(1.08)}50%{transform:scale(.995,.985) skewX(.5deg)}75%{transform:scale(1.005,1.025) skewX(.9deg);filter:drop-shadow(0 0 18px rgba(93,245,144,.45)) brightness(1.04)}}
+@keyframes sway{0%,100%{transform:rotate(0)}50%{transform:rotate(-1.5deg) translateY(-3px)}}
+@keyframes heat{50%{opacity:.6;transform:scale(1.08,1.15)}}
+.logo-wrap img{animation:float 6s ease-in-out infinite,glow 3s ease-in-out infinite}
+@keyframes glow{50%{filter:drop-shadow(0 0 40px rgba(93,245,144,.6))}}
 
 footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;color:var(--muted);font-size:13px}
 footer p+p{margin-top:6px}
@@ -268,6 +280,7 @@ footer p+p{margin-top:6px}
         <p class="kicker reveal">Speechless burns</p>
         <h2 class="reveal">We only burn when we're speechless.</h2>
         <p class="sub reveal">No schedule, no fake promise. When something happens that leaves the dev without words, a chunk of his own bag goes up in green flames. New high, crazy week, wild Torch moment. You'll know when it happens.</p>
+        <div class="scene reveal" aria-hidden="true"><img class="al" src="burn-alien.png" alt=""><img class="fi" src="burn-fire.png" alt=""></div>
         <div class="tracker reveal">
           <div class="big"><span class="js-moments">0</span> speechless moments</div>
           <small class="js-burned">Burned so far: the first one is coming</small>
@@ -322,7 +335,7 @@ footer p+p{margin-top:6px}
   </section>
 
   <section class="final">
-    <img class="reveal mascot" src="mascot.png" alt="The SPEECHLESS alien in a green flame, holding a finger to its lips">
+    <img class="reveal mascot" src="mascot.png" alt="The SPEECHLESS alien holding a finger to its lips">
     <h2 class="reveal"><span class="shiny">Shh.</span> You already know.</h2>
     <div class="cta reveal">
       <a class="btn btn-green js-buy" href="#">Buy on Torch</a>
