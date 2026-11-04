@@ -103,6 +103,15 @@ h1{font-family:Outfit,sans-serif;font-weight:900;font-size:min(13.5vw,120px);whi
 .ca.bw code{flex:1;min-width:0;max-width:none}
 .bwlink{background:var(--green);color:#03140a;border-radius:10px;padding:7px 12px;font-size:13px;font-weight:600}
 .rules{color:var(--muted);font-size:14px;padding:4px 6px}
+.father{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.poster{position:relative;border-radius:26px;overflow:hidden;border:1px solid rgba(232,184,96,.35);box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(232,184,96,.12);aspect-ratio:720/752;background:#120c06}
+.poster img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
+.poster:hover img{transform:scale(1.05)}
+.poster::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,rgba(8,5,2,.95),transparent)}
+.poster-title{position:absolute;left:0;right:0;bottom:22px;z-index:1;text-align:center;font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(26px,4vw,40px);letter-spacing:.06em;text-transform:uppercase;background:linear-gradient(180deg,#f6dc9c,#c8913f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.decree{margin-top:26px;padding:22px 24px;border-radius:20px;border:1px solid rgba(232,184,96,.3);background:linear-gradient(135deg,rgba(232,184,96,.08),rgba(12,20,16,.55))}
+.decree-k{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#e8b860;margin-bottom:8px}
+.decree p{font-size:18px;color:var(--text);font-style:italic}
 
 /* Sections */
 section{padding:110px 16px;max-width:1120px;margin:0 auto}
@@ -189,6 +198,8 @@ footer p+p{margin-top:6px}
   .cards,.quotes{grid-template-columns:1fr}
   .steps{grid-template-columns:repeat(2,1fr)}
   .burn{grid-template-columns:1fr}
+  .father{grid-template-columns:1fr;gap:32px}
+  .poster{max-width:460px;margin:0 auto;width:100%}
   .links{display:none}
 }
 @media (max-width:520px){
@@ -320,6 +331,24 @@ footer p+p{margin-top:6px}
     </div>
   </section>
 
+  <section id="father">
+    <div class="father">
+      <div class="poster reveal">
+        <img src="torchfather.jpg" alt="The Torch Father, a man in a tuxedo with a green flame for a head, sitting in a leather chair" loading="lazy">
+        <div class="poster-title">The Torch Father</div>
+      </div>
+      <div>
+        <p class="kicker reveal">Meet the Don</p>
+        <h2 class="reveal">The Family votes. The Torch Father decides.</h2>
+        <p class="sub reveal">Every Speechless Burn ends with him. He counts the votes, lights a cigar and announces the winner. Then the winning project gets an offer it can't refuse: we buy their token and burn it.</p>
+        <div class="decree reveal">
+          <span class="decree-k">This week's word from the Don</span>
+          <p class="js-decree">“The Family hasn’t voted yet. Be patient. Good things come to those who stay quiet.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="voice">
     <p class="kicker reveal">The voice</p>
     <h2 class="reveal">Every big Torch moment gets the same reaction.</h2>
@@ -342,8 +371,8 @@ footer p+p{margin-top:6px}
       </div>
       <div class="q reveal">
         <div class="head"><img src="logo.png" alt=""><div><b>SPEECHLESS</b><br><span>@Speechlesscoin1</span></div></div>
-        <div class="txt">You ever look at a chart and just go quiet? Yeah. Same.</div>
-        <div class="inner">Quoting a new torchpad launch</div>
+        <div class="txt">The Family has voted. The Torch Father made them an offer they couldn't refuse. Speechless.</div>
+        <div class="inner">Speechless Burn winner announcement</div>
       </div>
     </div>
   </section>
@@ -386,7 +415,8 @@ var CONFIG = {
   explorer: "",    // explorer link for the burn wallet, e.g. "https://.../account/ADDRESS"
   round: 0,        // current Speechless Burn round, 0 = not started
   burnedCount: 0,  // how many projects were burned so far
-  lastBurn: ""     // last burned project, e.g. "$LOBIN"
+  lastBurn: "",    // last burned project, e.g. "$LOBIN"
+  decree: ""       // weekly line from the Torch Father, e.g. "The Family has spoken. $LOBIN burns tonight."
 };
 
 (function(){
@@ -417,6 +447,7 @@ var CONFIG = {
   }
   if (CONFIG.round > 0) document.querySelector(".js-round").textContent = "Round " + CONFIG.round + " is live on X";
   document.querySelector(".js-last").textContent = "Projects burned so far: " + CONFIG.burnedCount + (CONFIG.lastBurn ? " · Last burn: " + CONFIG.lastBurn : "");
+  if (CONFIG.decree) document.querySelector(".js-decree").textContent = "\u201C" + CONFIG.decree + "\u201D";
   if (CONFIG.burnWallet) {
     var bw = document.querySelector(".js-bw"), bc = document.querySelector(".js-bwcopy");
     bw.textContent = CONFIG.burnWallet; bc.disabled = false;
